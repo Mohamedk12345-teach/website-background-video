@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Website with Background video</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="hero">
+      <video autoplay loop muted plays-inline id="backgroundVideo">
+        <source src="images/video.mp4" type="video/mp4" />
+      </video>
+      <div class="logo">
+        <img src="images/logo.png" alt="" />
+      </div>
+      <div class="sidebar">
+        <div class="text-box">
+          <h1>Maldives</h1>
+          <h4>Luxury Holiday</h4>
+          <div class="line"></div>
+        </div>
+      </div>
+      <div class="content">
+        <h1>Maldives</h1>
+        <div class="btn" id="playBtn">
+          <img src="images/play.png" id="icon" />Watch Video
+        </div>
+      </div>
+    </div>
+    <script>
+      var backgroundVideo = document.getElementById("backgroundVideo");
+      var playBtn = document.getElementById("playBtn");
+      var icon = document.getElementById("icon");
+
+      playBtn.onclick = function () {
+        backgroundVideo.style.display = "block";
+
+        if (backgroundVideo.paused) {
+          backgroundVideo.play();
+          icon.src = "images/pause.png";
+        } else {
+          backgroundVideo.pause();
+          icon.src = "images/play.png";
+        }
+      };
+    </script>
+  </body>
+</html>
